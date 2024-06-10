@@ -38,7 +38,11 @@ export default {
             try {
               await store.dispatch('login', { email:this.authInput.txtEmail, password:this.authInput.txtPassword })
               if (this.user!=null){
-              await this.$router.push('/rate')
+              await this.$router.push('/')
+              this.$message({
+                type: 'success',
+                message: 'Вход выполнен'
+              });
                 // console.log("успешно")
                  
               }

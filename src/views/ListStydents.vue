@@ -5,14 +5,14 @@
         <el-table :data="students">
           <el-table-column prop="fio" label="ФИО" />
           <el-table-column prop="classes" label="Класс"/>
-          <el-table-column>
+          <el-table-column  v-if="userCondition" >
             <template slot-scope="scope">
               <el-button type="danger" size="small" @click="deleteStudent(scope.row)">Удалить</el-button>
             </template>
           </el-table-column>
         </el-table>
       </div>
-      <div class="formAddShedule" >
+      <div class="formAddShedule" v-if="userCondition" >
         <div class="form-container">
         <h2>Новый ученик</h2>
         <div class="form-row">
@@ -50,6 +50,9 @@
       }
     },
     computed:{
+      userCondition(){
+        return store.state.user
+      },
       students(){
         return store.state.students
       }

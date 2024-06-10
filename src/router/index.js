@@ -7,16 +7,16 @@ import {store} from '../store/index'
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'rate-students',
-    meta:{layout:'main',requiresAuth:false},
-    beforeEnter: (to, from, next) => {
-      document.title = 'Оценки'
-      next()
-    },
-    component: () => import('../views/RateStudents.vue')
-  },
+  // {
+  //   path: '/',
+  //   name: 'rate-students',
+  //   meta:{layout:'main',requiresAuth:false},
+  //   beforeEnter: (to, from, next) => {
+  //     document.title = 'Оценки'
+  //     next()
+  //   },
+  //   component: () => import('../views/RateStudents.vue')
+  // },
   {
     path: '/login',
     name: 'login',
@@ -40,7 +40,7 @@ const routes = [
   },
   
   {
-    path: '/rate',
+    path: '/',
     name: 'rate',
     meta:{layout:'main',requiresAuth:false},
     beforeEnter: (to, from, next) => {
@@ -52,7 +52,7 @@ const routes = [
   {
     path: '/list-students',
     name: 'list',
-    meta:{layout:'main',requiresAuth:true},
+    meta:{layout:'main',requiresAuth:false},
     beforeEnter: (to, from, next) => {
       document.title = 'Ученики'
       next()

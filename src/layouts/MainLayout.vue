@@ -15,11 +15,11 @@
                                 
                             </div>
                             <ul>
-                                <li class="list"><router-link to="/rate" class="routeLink">
+                                <li class="list"><router-link to="/" class="routeLink">
                                     <img src="./images/dashboard.png">
                                     <span class="hidden-xs-only" v-if="!isXsBreakpoint">Оценки</span> 
                                 </router-link></li>
-                                <!-- <li class="list"><router-link to="/list-students" class="routeLink"><img src="./images/members.png"><span v-if="!isXsBreakpoint">Ученики</span> </router-link></li> -->
+                                <li class="list"><router-link to="/list-students" class="routeLink"><img src="./images/members.png"><span v-if="!isXsBreakpoint">Ученики</span> </router-link></li>
                                 <li class="list"><router-link to="/shedule" class="routeLink"><img src="./images/file.png" ><span v-if="!isXsBreakpoint">Расписание</span> </router-link></li>
                                 <li class="list"><router-link to="/homework" class="routeLink"><img src="./images/reports.png"><span v-if="!isXsBreakpoint">Домашние задания</span></router-link></li>
                             </ul>
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                             <ul>
-                                <li class="list"><router-link to="/rate" class="routeLink">
+                                <li class="list"><router-link to="/" class="routeLink">
                                     <img src="./images/dashboard.png">
                                     <span class="hidden-xs-only" v-if="!isXsBreakpoint">Оценки</span> 
                                 </router-link></li>
@@ -101,7 +101,10 @@ export default {
         
         signout(){
             store.dispatch('signout')
-            this.$router.push('/')
+            this.$message({
+                type: 'info',
+                message: 'Выполнен выход из аккаунта'
+            });
         },
     },
     
